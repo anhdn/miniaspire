@@ -18,6 +18,7 @@ yarn serve
 ### Technology stack:
 - React v16.8
 - Next.js v9
+- Immutable.js
 - Styled-Components
 - Bootstrap v4
 - Sass

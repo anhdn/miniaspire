@@ -12,7 +12,10 @@ font-weight: 600;
 margin-bottom: 9px;
 padding-bottom: 9px;
 `
-const BankSelection = ({ onSelectedBank, onSelectedAmount }) => {
+const TextSelection = styled.div`
+margin-bottom: 10px
+`
+const BankSelection = ({ onSelectedBank, onSelectedAmount, bankSelected }) => {
   const [bank, setBank] = useState('')
   const selectedBank = (bank) => {
     setBank(bank)
@@ -24,13 +27,13 @@ const BankSelection = ({ onSelectedBank, onSelectedAmount }) => {
     <BankContainer>
       <Title>Choose a bank</Title>
       <div className='cc-selector'>
-        <input id='citibank' type='radio' name='bank' value='citibank' onClick={() => selectedBank('Citi Bank')} />
+        <input id='citibank' type='radio' name='bank' value='citibank' onClick={() => selectedBank(1)} />
         <label className='drinkcard-cc citibank' htmlFor='citibank' />
-        <input id='hsbcbank' type='radio' name='bank' value='hsbcbank' onClick={() => selectedBank('HSBC')} />
+        <input id='hsbcbank' type='radio' name='bank' value='hsbc' onClick={() => selectedBank(2)} />
         <label className='drinkcard-cc hsbcbank' htmlFor='hsbcbank' />
-        <input id='standardchartered' type='radio' name='bank' value='standardchartered' onClick={() => selectedBank('Standard Chartered')} />
+        <input id='standardchartered' type='radio' name='bank' value='standardchartered' onClick={() => selectedBank(3)} />
         <label className='drinkcard-cc standardchartered' htmlFor='standardchartered' />
-        {bank && (<div>You selected <strong>{bank}</strong></div>)}
+        {bank && (<TextSelection>Selected <strong>{bankSelected.name} - Interest rate {bankSelected.rate}%</strong></TextSelection>)}
         <Title >Loan Amount</Title>
         <div className='form-group input-group mb-2 mr-sm-2 mb-sm-0'>
           <input

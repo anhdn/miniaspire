@@ -1,13 +1,20 @@
 
 const interestRate = {
   'citibank': {
-    rate: '1.75'
+    id: 1,
+    rate: '1.75',
+    name: 'Citi Bank'
   },
   'hsbc': {
-    rate: '1.75'
+    id: 2,
+    code: 'citibank',
+    rate: '1.75',
+    name: 'HSBC'
   },
   'standardchartered': {
-    rate: '1.75'
+    id: 3,
+    rate: '1.75',
+    name: 'Standard Chartered'
   }
 }
 const bank = {

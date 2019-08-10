@@ -36,17 +36,25 @@ class Register extends React.Component {
     // Don't call this.setState() here!
     this.state = {
       step: 1,
-      bankSelected: '',
+      bankSelected: {},
       userInfo: {}
     }
   }
 
   render () {
-    // const { bank, register } = this.props
-    const onSelectedBank = (bank) => this.setState({ bankSelected: bank })
+    const { bank, register } = this.props
+    const banks = bank.get('interestRate')
+    const onSelectedBank = (bank) => {
+      banks.map((item) => {
+        if (bank === item.get('id')) {
+          this.setState({
+            bankSelected: {name: item.get('name'), rate: item.get('rate')}
+          })
+        }
+      });
+    }
     const onSelectedAmount = (amount) => this.setState({ amount })
     const onSelectedUserInfo = (userInfo) => (this.setState({ userInfo }))
-
     const handleSubmit = () => {
       const result = submitLoan({
         ...this.state.userInfo,
@@ -69,7 +77,11 @@ class Register extends React.Component {
           <h4 className='h4 mb-4 text-center'>Loan Information</h4>
           {
             this.state.step === 1 &&
-              <BankSelection onSelectedBank={onSelectedBank} onSelectedAmount={onSelectedAmount} />
+              <BankSelection
+                onSelectedBank={onSelectedBank}
+                onSelectedAmount={onSelectedAmount}
+                bankSelected={this.state.bankSelected}
+              />
           }
           {
             this.state.step === 2 &&

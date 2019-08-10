@@ -1,7 +1,0 @@
-{
-  "env": {
-    "GITHUB_API_ENDPOINT": "https://api.github.com",
-    "HOST": "https://weaspire.sg/",
-    "API": "https://weaspire.sg/api"
-  }
-}
