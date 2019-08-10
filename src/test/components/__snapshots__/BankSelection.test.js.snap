@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly without function handle change 1`] = `
+<div
+  className="BankSelection__BankContainer-sc-1xcycdl-0 hHhsAf"
+>
+  <h2
+    className="BankSelection__Title-sc-1xcycdl-1 jLJwjv"
+  >
+    Choose a bank
+  </h2>
+  <div
+    className="cc-selector"
+  >
+    <input
+      id="citibank"
+      name="bank"
+      onClick={[Function]}
+      type="radio"
+      value="citibank"
+    />
+    <label
+      className="drinkcard-cc citibank"
+      htmlFor="citibank"
+    />
+    <input
+      id="hsbcbank"
+      name="bank"
+      onClick={[Function]}
+      type="radio"
+      value="hsbcbank"
+    />
+    <label
+      className="drinkcard-cc hsbcbank"
+      htmlFor="hsbcbank"
+    />
+    <input
+      id="standardchartered"
+      name="bank"
+      onClick={[Function]}
+      type="radio"
+      value="standardchartered"
+    />
+    <label
+      className="drinkcard-cc standardchartered"
+      htmlFor="standardchartered"
+    />
+    
+    <h2
+      className="BankSelection__Title-sc-1xcycdl-1 jLJwjv"
+    >
+      Loan Amount
+    </h2>
+    <div
+      className="form-group input-group mb-2 mr-sm-2 mb-sm-0"
+    >
+      <input
+        className="form-control amount"
+        id="amount"
+        name="amount"
+        onChange={[Function]}
+        placeholder="10000 sgd"
+        type="text"
+      />
+      <div
+        className="input-group-append"
+      >
+        <span
+          className="input-group-text"
+          id="basic-addon1"
+        >
+          sgd
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
