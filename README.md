@@ -14,3 +14,14 @@ After `npm run build` finished, run
 ```
 yarn serve
 ```
+
+### Technology stack:
+- React v16.8
+- Next.js v9
+- Styled-Components
+- Bootstrap v4
+- Sass
+- ESLint
+- Prettier
+- Webpack
+- Husky & Lint-Staged
