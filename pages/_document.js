@@ -49,7 +49,6 @@ export default class extends Document {
         <title>{title}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta property='og:title' content={title} />
-        <link rel='icon' type='image/png' href='static/favicon.ico' sizes='16x16' />
 
       </Helmet>
     )
