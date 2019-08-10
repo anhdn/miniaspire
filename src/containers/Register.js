@@ -1,17 +1,17 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import Router from 'next/router'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { getInterest } from "actions/bank";
-import { submitLoan } from "actions/register";
+import { getInterest } from 'actions/bank'
+import { submitLoan } from 'actions/register'
 import BankSelection from 'components/BankSelection'
 import UserInput from 'components/UserInput'
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
-const Page = styled.div`
-`
+// const Page = styled.div`
+// `
 const FormContainer = styled.div`
   margin: 0 auto;
   // width: 50%;
@@ -31,28 +31,28 @@ class Register extends React.Component {
   static async getInitialProps ({ store }) {
     await store.dispatch(getInterest())
   }
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     // Don't call this.setState() here!
     this.state = {
       step: 1,
       bankSelected: '',
       userInfo: {}
-    };
+    }
   }
 
   render () {
-    const { bank, register } = this.props;
-    const onSelectedBank = (bank) => this.setState({bankSelected: bank})
-    const onSelectedAmount = (amount) => this.setState({amount})
-    const onSelectedUserInfo = (userInfo) => (this.setState({userInfo}))
+    // const { bank, register } = this.props
+    const onSelectedBank = (bank) => this.setState({ bankSelected: bank })
+    const onSelectedAmount = (amount) => this.setState({ amount })
+    const onSelectedUserInfo = (userInfo) => (this.setState({ userInfo }))
 
     const handleSubmit = () => {
       const result = submitLoan({
-          ...this.state.userInfo,
-          bank: this.state.bankSelected,
-          amount: this.state.amount,
-        })
+        ...this.state.userInfo,
+        bank: this.state.bankSelected,
+        amount: this.state.amount
+      })
       if (result.status === 'sucess') {
         Router.push('/success')
       }
@@ -69,7 +69,7 @@ class Register extends React.Component {
           <h4 className='h4 mb-4 text-center'>Loan Information</h4>
           {
             this.state.step === 1 &&
-              <BankSelection onSelectedBank={onSelectedBank} onSelectedAmount={onSelectedAmount}/>
+              <BankSelection onSelectedBank={onSelectedBank} onSelectedAmount={onSelectedAmount} />
           }
           {
             this.state.step === 2 &&
@@ -81,20 +81,20 @@ class Register extends React.Component {
             {
               this.state.step > 1 &&
                 <Button
-                    className='btn btn-info'
-                    onClick={() => {
-                      this.setState({step: 1})
-                    }}
+                  className='btn btn-info'
+                  onClick={() => {
+                    this.setState({ step: 1 })
+                  }}
                 > Back</Button>
             }
             {
-              this.state.step == 1 &&
+              this.state.step === 1 &&
                 <Button
                   className='btn btn-success margin-l10'
-                  onClick={() => { this.setState({ step: 2 })}}
+                  onClick={() => { this.setState({ step: 2 }) }}
                 > Next</Button>
             }
-            { this.state.step == 2 &&
+            { this.state.step === 2 &&
               <Button
                 className='btn btn-success margin-l10'
                 onClick={handleSubmit}
@@ -111,7 +111,7 @@ class Register extends React.Component {
 const mapStateToProps = state => {
   return {
     bank: state.bank,
-    register: state.register,
+    register: state.register
   }
 }
 Register.propTypes = {

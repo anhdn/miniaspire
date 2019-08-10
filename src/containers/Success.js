@@ -1,9 +1,7 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-const Page = styled.div`
-`
 const FormContainer = styled.div`
   margin: 0 auto;
   // width: 50%;
@@ -19,9 +17,8 @@ const FormContainer = styled.div`
   background: rgb(255, 255, 255);
 `
 
-
 const Success = () => {
-    return (
+  return (
     <Fragment>
       <Helmet>
         <title>Register Success</title>

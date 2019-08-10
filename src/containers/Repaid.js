@@ -1,13 +1,6 @@
-import React, {Fragment} from 'react'
-import { connect } from 'react-redux'
+import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import { getInterest } from "actions/bank";
-import { submitLoan } from "actions/register";
-import BankSelection from 'components/BankSelection'
-import UserInput from 'components/UserInput'
-import {Button} from 'react-bootstrap'
 
 const Page = styled.div`
 `
@@ -26,9 +19,8 @@ const FormContainer = styled.div`
   background: rgb(255, 255, 255);
 `
 
-
 const Success = () => {
-    return (
+  return (
     <Fragment>
       <Helmet>
         <title>Repaid</title>

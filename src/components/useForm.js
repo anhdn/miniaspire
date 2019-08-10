@@ -1,26 +1,24 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 const useForm = (callback) => {
+  const [values, setValues] = useState({})
 
-    const [values, setValues] = useState({});
+  const handleSubmit = (event) => {
+    if (event) event.preventDefault()
+    callback()
+  }
 
-    const handleSubmit = (event) => {
-        if (event) event.preventDefault();
-        console.log('values===>test', values)
-        callback();
-    };
+  const handleChange = (event) => {
+    event.persist()
+    setValues(values => ({ ...values, [event.target.name]: event.target.value }))
+    callback({ ...values, [event.target.name]: event.target.value })
+  }
 
-    const handleChange = (event) => {
-        event.persist();
-        setValues(values => ({ ...values, [event.target.name]: event.target.value }));
-        callback({...values, [event.target.name]: event.target.value});
-    };
+  return {
+    handleChange,
+    handleSubmit,
+    values
+  }
+}
 
-    return {
-        handleChange,
-        handleSubmit,
-        values,
-    }
-};
-
-export default useForm;
+export default useForm

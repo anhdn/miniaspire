@@ -1,7 +1,6 @@
 import Immutable from 'immutable'
 import * as ActionType from 'actions/register'
 
-
 export const initialState = Immutable.fromJS({
   isLoading: false,
   registerStatus: false
