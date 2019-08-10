@@ -3,7 +3,7 @@
 ```
 cd my-project
 yarn install
-yarn start
+yarn run dev
 ```
 
 Then open `http://localhost:8080/` to see your app.
