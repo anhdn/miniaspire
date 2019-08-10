@@ -1,0 +1,45 @@
+import React, {Fragment} from 'react'
+import { connect } from 'react-redux'
+import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { getInterest } from "actions/bank";
+import { submitLoan } from "actions/register";
+import BankSelection from 'components/BankSelection'
+import UserInput from 'components/UserInput'
+import {Button} from 'react-bootstrap'
+
+const Page = styled.div`
+`
+const FormContainer = styled.div`
+  margin: 0 auto;
+  // width: 50%;
+  background: #ffffff;
+  margin-bottom: 32px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px;
+  padding: 24px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  background: rgb(255, 255, 255);
+`
+
+
+const Success = () => {
+    return (
+    <Fragment>
+      <Helmet>
+        <title>Repaid</title>
+        <meta name='description' content='Aspire register form' />
+      </Helmet>
+
+      <FormContainer className='col-md-8 col-sm-12'>
+          Repaid
+      </FormContainer>
+
+    </Fragment>
+  )
+}
+export default Success
