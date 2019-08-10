@@ -26,3 +26,39 @@ yarn serve
 - Prettier
 - Webpack
 - Husky & Lint-Staged
+- Jest
+### Tree
+    
+    .
+    ├── README.md
+    ├── app.yaml
+    ├── constants
+    │   └── interestRate.json
+    ├── next.config.js
+    ├── package-lock.json
+    ├── package.json
+    ├── pages
+    │   ├── _app.js
+    │   ├── _document.js
+    │   ├── index.js
+    │   ├── register.js
+    │   ├── repaid.js
+    │   └── success.js
+    ├── routes.js
+    ├── server
+    │   └── index.js
+    ├── src
+    │   ├── actions
+    │   ├── components
+    │   ├── config.js
+    │   ├── containers
+    │   ├── globalStyle.scss
+    │   ├── libs
+    │   ├── reducers
+    │   ├── store
+    │   ├── test
+    │   └── theme.js
+    ├── static
+    │   ├── next-logo.png
+    │   └── robots.txt
+    └── yarn.lock
